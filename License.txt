@@ -1,9 +1,9 @@
 ﻿<div class="License">
    <h3>License</h3>
-   <p class="Owner">
-       <a href="http://www.christoc.com">Christoc.com</a></br>
-       Copyright (c) 2016</br>
-   </p>
+	<p class="Owner">
+		Copyright &copy; 2016 by JoopSoft.com <br />
+		<a href=http://www.joopsoft.com>www.JoopSoft.com</a><br />
+	</p>
   <p>
       Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated 
       documentation files (the "Software"), to deal in the Software without restriction, including without limitation 
@@ -24,4 +24,3 @@
 	<p>BlueImp Gallery from https://github.com/blueimp/Bootstrap-Image-Gallery under MIT License</p>
   </div>
 </div>
-

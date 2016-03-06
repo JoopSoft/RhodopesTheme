@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "scss/_partial/variables.css",
+    "inputFile": "scss/_partial/variables.scss"
+  },
+  {
+    "outputFile": "scss/style.css",
+    "inputFile": "scss/style.scss"
+  }
+]

@@ -13,7 +13,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>RhodopesTheme</RootNamespace>
     <AssemblyName>RhodopesTheme</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -32,6 +32,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -40,21 +41,58 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DotNetNuke">
       <HintPath>..\..\..\..\bin\DotNetNuke.dll</HintPath>
     </Reference>
+    <Reference Include="DotNetNuke.HttpModules, Version=8.0.0.809, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\DotNetNuke.HttpModules.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetNuke.Services.Syndication, Version=8.0.0.809, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\DotNetNuke.Services.Syndication.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetNuke.Web, Version=8.0.0.809, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\DotNetNuke.Web.dll</HintPath>
+    </Reference>
     <Reference Include="DotNetNuke.Web.Client">
       <HintPath>..\..\..\..\bin\DotNetNuke.Web.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetNuke.WebControls, Version=2.4.0.598, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\DotNetNuke.WebControls.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetNuke.Website, Version=8.0.0.809, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\DotNetNuke.Website.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetNuke.WebUtility, Version=4.2.1.783, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\DotNetNuke.WebUtility.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\System.Web.Razor.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
@@ -62,6 +100,7 @@
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Edit.ascx.cs">
@@ -82,19 +121,132 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="PopupSkin.jpg" />
+    <Content Include="PopupSkin.doctype.xml" />
+    <Content Include="scss\style.css">
+      <DependentUpon>style.scss</DependentUpon>
+    </Content>
+    <Content Include="scss\style.min.css">
+      <DependentUpon>style.css</DependentUpon>
+    </Content>
+    <Content Include="scss\_partial\variables.css">
+      <DependentUpon>variables.scss</DependentUpon>
+    </Content>
+    <Content Include="scss\_partial\variables.min.css">
+      <DependentUpon>variables.css</DependentUpon>
+    </Content>
+    <Content Include="Search.doctype.xml" />
+    <Content Include="Edit.jpg" />
+    <Content Include="Containers\500.ascx" />
+    <Content Include="Containers\500.jpg" />
+    <Content Include="Containers\H3_Accordion_NoFooter.jpg" />
+    <Content Include="Containers\H3_Accordion.jpg" />
+    <Content Include="Containers\H3_Panel_NoFooter.jpg" />
+    <Content Include="Containers\H3_Panel_NoOptions.jpg" />
+    <Content Include="Containers\H3_Panel_NoFooter_NoTitle.jpg" />
+    <Content Include="Containers\H3_Panel_Options.jpg" />
+    <Content Include="Containers\NoTitle.jpg" />
+    <Content Include="Containers\H3_Clean.jpg" />
+    <Content Include="Pages.doctype.xml" />
+    <Content Include="Error.doctype.xml" />
+    <Content Include="Error.ascx" />
+    <Content Include="Error.jpg" />
+    <Content Include="Admin.ascx" />
+    <Content Include="Admin.jpg" />
+    <Content Include="Containers\H3_Panel_NoFooter_NoTitle.ascx" />
+    <Content Include="Containers\H3_Panel_NoOptions.ascx" />
+    <Content Include="Containers\H3_Clean.ascx" />
+    <Content Include="Containers\H3_Panel_Options.ascx" />
+    <Content Include="Containers\H3_Panel_NoFooter.ascx" />
+    <Content Include="Containers\H3_Accordion_NoFooter.ascx" />
+    <Content Include="Admin.doctype.xml" />
+    <Content Include="Search.ascx" />
+    <Content Include="Search.jpg" />
+    <Content Include="Vegas\overlays\10.png" />
     <Content Include="bootstrapNav\menudef.xml" />
     <Content Include="bootstrapNav\BootStrapNav.js" />
     <Content Include="bootstrapNav\BootStrapNav.txt" />
-    <Content Include="Containers\Blank.ascx" />
-    <Content Include="Containers\Main.ascx" />
+    <Content Include="Bootstrap\css\bootstrap.css" />
+    <Content Include="Bootstrap\css\bootstrap.min.css" />
+    <Content Include="Bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Bootstrap\js\bootstrap.min.js" />
+    <Content Include="Common\IncludeFiles.ascx" />
+    <Content Include="Containers\404.ascx" />
+    <Content Include="Containers\404.jpg" />
+    <Content Include="Containers\NoTitle.ascx" />
+    <Content Include="Containers\H3_Accordion.ascx" />
+    <Content Include="Containers\H2_Clean.ascx" />
+    <Content Include="Containers\H2_Clean.jpg" />
+    <Content Include="Containers\H3_Centered.ascx" />
+    <Content Include="Containers\H3_Centered.jpg" />
+    <Content Include="Containers\H4_Clean.ascx" />
+    <Content Include="Containers\H4_Clean.jpg" />
+    <Content Include="Containers\H4_Centered.ascx" />
+    <Content Include="Containers\H4_Centered.jpg" />
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\font-awesome.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\jquery.smartmenus.bootstrap.css" />
     <Content Include="Edit.ascx" />
     <Content Include="Edit.doctype.xml" />
+    <Content Include="FontAwesome\css\font-awesome.css" />
+    <Content Include="FontAwesome\css\font-awesome.min.css" />
+    <Content Include="FontAwesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Home.jpg" />
+    <Content Include="Images\arrow-right.png" />
+    <Content Include="Images\breadcrumb-arrow.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\message_icon.png" />
+    <Content Include="Images\minus-down.png" />
+    <Content Include="Images\notification_icon.png" />
+    <Content Include="Images\no_avatar.gif" />
+    <Content Include="Images\plus-up.png" />
+    <Content Include="Images\search-icon.png" />
+    <Content Include="Images\search.png" />
+    <Content Include="img\arrow-right.png" />
+    <Content Include="img\breadcrumb-arrow.png" />
+    <Content Include="img\icon.ico" />
+    <Content Include="img\icon.png" />
+    <Content Include="img\logo.png" />
+    <Content Include="img\message_icon.png" />
+    <Content Include="img\message_icon_old.png" />
+    <Content Include="img\minus-down.png" />
+    <Content Include="img\notification_icon.png" />
+    <Content Include="img\notification_icon_old.png" />
+    <Content Include="img\no_avatar.gif" />
+    <Content Include="img\plus-up.png" />
+    <Content Include="img\search-icon.png" />
+    <Content Include="img\search.png" />
+    <Content Include="img\search_old.png" />
+    <Content Include="Includes\banner01.jpg" />
+    <Content Include="Includes\contact-address.png" />
+    <Content Include="Includes\contact-email.png" />
+    <Content Include="Includes\contact-phone.png" />
+    <Content Include="Includes\home-content-image1.jpg" />
+    <Content Include="Includes\home-content-image2.jpg" />
+    <Content Include="Includes\home-content-image3.jpg" />
+    <Content Include="Includes\home-content-image4.jpg" />
+    <Content Include="Includes\home-content-image5.jpg" />
+    <Content Include="Includes\latest-thumb1.jpg" />
+    <Content Include="Includes\latest-thumb2.jpg" />
+    <Content Include="Includes\social-facebook.png" />
+    <Content Include="Includes\social-googleplus.png" />
+    <Content Include="Includes\social-linkedin.png" />
+    <Content Include="Includes\social-sprite.png" />
+    <Content Include="Includes\social-twitter.png" />
+    <Content Include="Pages.ascx" />
+    <Content Include="Pages.jpg" />
     <Content Include="i\icon_message_active.png" />
     <Content Include="i\icon_notification_active.png" />
+    <Content Include="js\jquery.smartmenus.bootstrap.js" />
+    <Content Include="js\jquery.smartmenus.js" />
+    <Content Include="js\scripts.js" />
+    <Content Include="Menus\MainMenu\MainMenu-menudef.xml" />
+    <Content Include="Menus\MainMenu\MainMenu.css" />
+    <Content Include="Menus\MainMenu\MainMenu.txt" />
     <Content Include="PopupSkin.ascx" />
     <Content Include="Home.doctype.xml" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -112,7 +264,6 @@
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery.blueimp-gallery.min.js" />
     <Content Include="License.txt" />
-    <Content Include="skin.css" />
     <Content Include="ReleaseNotes.txt" />
     <Content Include="Home.ascx" />
   </ItemGroup>
@@ -132,13 +283,85 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_LocalResources\" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="LICENSE" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Vegas\overlays\01.png" />
+    <Content Include="Vegas\overlays\02.png" />
+    <Content Include="Vegas\overlays\03.png" />
+    <Content Include="Vegas\overlays\04.png" />
+    <Content Include="Vegas\overlays\05.png" />
+    <Content Include="Vegas\overlays\06.png" />
+    <Content Include="Vegas\overlays\07.png" />
+    <Content Include="Vegas\overlays\08.png" />
+    <Content Include="Vegas\overlays\09.png" />
+    <Content Include="Vegas\vegas.css" />
+    <Content Include="Vegas\vegas.js" />
+    <Content Include="Vegas\vegas.min.css" />
+    <Content Include="Vegas\vegas.min.js" />
+    <Content Include="web.config" />
+    <Content Include="img\icon.icns" />
+    <Content Include="install\RhodopesTheme_00.00.01_Install.zip" />
+    <Content Include="install\RhodopesTheme_00.00.01_Source.zip" />
+    <Content Include="Bootstrap\css\bootstrap.css.map" />
+    <Content Include="Bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Containers\resource-container.zip.manifest" />
+    <Content Include="FontAwesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="FontAwesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="FontAwesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="FontAwesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="FontAwesome\fonts\FontAwesome.otf" />
+    <Content Include="FontAwesome\less\animated.less" />
+    <Content Include="FontAwesome\less\bordered-pulled.less" />
+    <Content Include="FontAwesome\less\core.less" />
+    <Content Include="FontAwesome\less\fixed-width.less" />
+    <Content Include="FontAwesome\less\font-awesome.less" />
+    <Content Include="FontAwesome\less\icons.less" />
+    <Content Include="FontAwesome\less\larger.less" />
+    <Content Include="FontAwesome\less\list.less" />
+    <Content Include="FontAwesome\less\mixins.less" />
+    <Content Include="FontAwesome\less\path.less" />
+    <Content Include="FontAwesome\less\rotated-flipped.less" />
+    <Content Include="FontAwesome\less\stacked.less" />
+    <Content Include="FontAwesome\less\variables.less" />
+    <Content Include="FontAwesome\scss\font-awesome.scss" />
+    <Content Include="FontAwesome\scss\_animated.scss" />
+    <Content Include="FontAwesome\scss\_bordered-pulled.scss" />
+    <Content Include="FontAwesome\scss\_core.scss" />
+    <Content Include="FontAwesome\scss\_fixed-width.scss" />
+    <Content Include="FontAwesome\scss\_icons.scss" />
+    <Content Include="FontAwesome\scss\_larger.scss" />
+    <Content Include="FontAwesome\scss\_list.scss" />
+    <Content Include="FontAwesome\scss\_mixins.scss" />
+    <Content Include="FontAwesome\scss\_path.scss" />
+    <Content Include="FontAwesome\scss\_rotated-flipped.scss" />
+    <Content Include="FontAwesome\scss\_stacked.scss" />
+    <Content Include="FontAwesome\scss\_variables.scss" />
+    <Content Include="Resource-skin.zip.manifest" />
+    <Content Include="Vegas\vegas.min.js.map" />
+    <Content Include="Resources.zip" />
+    <Content Include="scss\style.scss" />
+    <Content Include="scss\_partial\variables.scss" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_LocalResources\" />
+    <Folder Include="Common\App_LocalResources\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

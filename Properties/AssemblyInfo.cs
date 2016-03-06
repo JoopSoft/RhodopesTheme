@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("RhodopesTheme")]
-[assembly: AssemblyCopyright("Christoc.com Copyright © 2016")]
+[assembly: AssemblyCopyright("JoopSOFT.com © 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

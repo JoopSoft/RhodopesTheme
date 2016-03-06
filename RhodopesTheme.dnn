@@ -1,17 +1,18 @@
 <dotnetnuke type="Package" version="5.0">
   <packages>
-    <package name="Christoc.Themes.RhodopesTheme" type="Skin" version="00.00.01">
-      <friendlyName>RhodopesTheme</friendlyName>
-      <description>A responsive DNN skin using Bootstrap 3. Requires installation via the Host/Extensions page.</description>
+    <package name="JoopSOFT.Themes.RhodopesTheme" type="Skin" version="00.00.01">
+      <friendlyName>Rhodopes</friendlyName>
+      <description>Rhodopes Skin</description>
+      <iconFile>img/icon.png</iconFile>
       <owner>
-        <name>Christoc.com</name>
-        <organization>Christoc.com</organization>
-        <url>http://www.christoc.com</url>
-        <email>Themes@christoc.com</email>
+        <name>JoopSoft.com</name>
+        <organization>JoopSoft.com</organization>
+        <url>www.JoopSoft.com</url>
+        <email>themes@joopsoft.com</email>
       </owner>
       <azureCompatible>true</azureCompatible>
-      <license src="license.txt"></license>
-      <releaseNotes src="releasenotes.txt"></releaseNotes>
+      <license src="License.txt"></license>
+      <releaseNotes src="ReleaseNotes.txt"></releaseNotes>
       <dependencies>
         <dependency type="CoreVersion">07.01.00</dependency>
       </dependencies>
@@ -43,23 +44,35 @@
               <name>Edit.ascx</name>
             </skinFile>
             <skinFile>
+              <name>Admin.ascx</name>
+            </skinFile>
+            <skinFile>
+              <name>Error.ascx</name>
+            </skinFile>
+            <skinFile>
+              <name>Pages.ascx</name>
+            </skinFile>
+            <skinFile>
               <name>PopupSkin.ascx</name>
+            </skinFile>
+            <skinFile>
+              <name>Search.ascx</name>
             </skinFile>
           </skinFiles>
         </component>
       </components>
     </package>
-    <package name="Christoc.Themes.Containers.RhodopesTheme" type="Container" version="00.00.01">
-      <friendlyName>RhodopesTheme</friendlyName>
-      <description>Containers for the RhodopesTheme Skin package.</description>
+    <package name="JoopSOFT.Themes.Containers.RhodopesTheme" type="Container" version="00.00.01">
+      <friendlyName>Rhodopes</friendlyName>
+      <description>Rhodopes Container</description>
       <owner>
-        <name>Christoc.com</name>
-        <organization>Christoc.com</organization>
-        <url>http://www.christoc.com</url>
-        <email>Themes@christoc.com</email>
+        <name>JoopSoft.com</name>
+        <organization>JoopSoft.com</organization>
+        <url>www.JoopSoft.com</url>
+        <email>themes@joopsoft.com</email>
       </owner>
-      <license src="license.txt"></license>
-      <releaseNotes src="releasenotes.txt"></releaseNotes>
+      <license src="License.txt"></license>
+      <releaseNotes src="ReleaseNotes.txt"></releaseNotes>
       <dependencies>
         <dependency type="CoreVersion">07.01.00</dependency>
       </dependencies>
@@ -69,10 +82,46 @@
             <containerName>RhodopesTheme</containerName>
             <basepath/>
             <containerFile>
-              <name>Main.ascx</name>
+              <name>404.ascx</name>
             </containerFile>
             <containerFile>
-              <name>Blank.ascx</name>
+              <name>500.ascx</name>
+            </containerFile>
+            <containerFile>
+              <name>H2_Clean.ascx</name>
+            </containerFile>
+            <containerFile>
+              <name>H3_Accordion.ascx</name>
+            </containerFile>       
+            <containerFile>
+              <name>H3_Accordion_NoFooter.ascx</name>
+            </containerFile>
+            <containerFile>
+              <name>H3_Centered.ascx</name>
+            </containerFile>            
+            <containerFile>
+              <name>H3_Clean.ascx</name>
+            </containerFile>
+            <containerFile>
+              <name>H3_Panel_NoFooter.ascx</name>
+            </containerFile>            
+            <containerFile>
+              <name>H3_Panel_NoFooter_NoTitle.ascx</name>
+            </containerFile>
+            <containerFile>
+              <name>H3_Panel_NoOptions.ascx</name>
+            </containerFile>            
+            <containerFile>
+              <name>H3_Panel_Options.ascx</name>
+            </containerFile>
+            <containerFile>
+              <name>H4_Centered.ascx</name>
+            </containerFile>            
+            <containerFile>
+              <name>H4_Clean.ascx</name>
+            </containerFile>
+            <containerFile>
+              <name>NoTitle.ascx</name>
             </containerFile>
           </containerFiles>
         </component>
@@ -80,3 +129,5 @@
     </package>
   </packages>
 </dotnetnuke>
+
+

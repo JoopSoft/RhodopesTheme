@@ -1,0 +1,60 @@
+﻿<dotnetnuke type="ResourceFile" version="5.0">
+  <files>
+    <file>
+      <path />
+      <name>404.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>500.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>H2_Clean.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>H3_Accordion.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>H3_Accordion_NoFooter.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>H3_Centered.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>H3_Clean.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>H3_Panel_NoFooter.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>H3_Panel_NoFooter_NoTitle.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>H3_Panel_NoOptions.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>H3_Panel_Options.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>H4_Centered.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>H4_Clean.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>NoTitle.ascx</name>
+    </file>
+  </files>
+</dotnetnuke>
