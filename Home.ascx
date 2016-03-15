@@ -101,6 +101,7 @@
     <!--PAGE CONTENT-->
     <section class="container">
         <main role="main" class="home">
+
             <!--HEADER PANE-->
             <div class="dnnpane">
                 <div id="HeaderPane" class="col-sm-12 headerPane" runat="server"></div>
@@ -202,37 +203,37 @@
 
     });
 
-    $(function () {
-        $('body').vegas({
-            delay: 30000,
-            timer: true,
-            shuffle: true,
-            transition: 'fade',
-            transitionDuration: 3000,
-            animation: 'random',
-            autoplay: false,
-            overlay: $skinPath + '/Vegas/overlays/01.png',
-            slides: [
-                { src: $localPath + 'Images/bg/1.jpg',  photographer: 'Mihail Hubchev - Winter in Shiroka laka village' },
-                { src: $localPath + 'Images/bg/2.jpg',  photographer: 'Teodor Varbanov' },
-                { src: $localPath + 'Images/bg/3.jpg',  photographer: 'Vanya Padalova' },
-                { src: $localPath + 'Images/bg/4.jpg',  photographer: 'Tencho Petkov - Monyak pano' },
-                { src: $localPath + 'Images/bg/5.jpg',  photographer: 'Alexander Karadzhov' },
-                { src: $localPath + 'Images/bg/6.jpg',  photographer: 'Elena Mandjukova' },
-                { src: $localPath + 'Images/bg/7.jpg',  photographer: 'Borislava Ivanova - Lake' },
-                { src: $localPath + 'Images/bg/8.jpg',  photographer: 'Gergana Todorova - Lake' },
-                { src: $localPath + 'Images/bg/9.jpg',  photographer: 'Ivailo Madzharov - "Autumn"' },
-                { src: $localPath + 'Images/bg/10.jpg', photographer: 'Chavdar Selinski - "Old bridge"' },
-                { src: $localPath + 'Images/bg/11.jpg', photographer: 'Chavdar Selinski - "Agushev konak" - Mogilitsa village' },
-                { src: $localPath + 'Images/bg/12.jpg', photographer: 'Mihail Hubchev - Church "St. Visarion Smolyanski" - Smolyan' },
-                { src: $localPath + 'Images/bg/13.jpg', photographer: 'Mihail Hubchev - "Winter"' }
-            ],
-            walk: function (index, slideSettings) {
-                //console.log("Slide index " + index + " image " + slideSettings.src + '' + slideSettings.photographer);
-                $('#ppLabel').html('<i class="fa ' + $camera + '"></i> ' + slideSettings.photographer);
-
-            }
-        });
-    });
+    //$(function () {
+    //    $('body').vegas({
+    //        delay: 30000,
+    //        timer: true,
+    //        shuffle: true,
+    //        transition: 'fade',
+    //        transitionDuration: 3000,
+    //        animation: 'random',
+    //        autoplay: false,
+    //        overlay: $skinPath + '/Vegas/overlays/01.png',
+    //        slides: [
+    //            { src: $localPath + 'Images/bg/1.jpg',  photographer: 'Mihail Hubchev - Winter in Shiroka laka village' },
+    //            { src: $localPath + 'Images/bg/2.jpg',  photographer: 'Teodor Varbanov' },
+    //            { src: $localPath + 'Images/bg/3.jpg',  photographer: 'Vanya Padalova' },
+    //            { src: $localPath + 'Images/bg/4.jpg',  photographer: 'Tencho Petkov - Monyak pano' },
+    //            { src: $localPath + 'Images/bg/5.jpg',  photographer: 'Alexander Karadzhov' },
+    //            { src: $localPath + 'Images/bg/6.jpg',  photographer: 'Elena Mandjukova' },
+    //            { src: $localPath + 'Images/bg/7.jpg',  photographer: 'Borislava Ivanova - Lake' },
+    //            { src: $localPath + 'Images/bg/8.jpg',  photographer: 'Gergana Todorova - Lake' },
+    //            { src: $localPath + 'Images/bg/9.jpg',  photographer: 'Ivailo Madzharov - "Autumn"' },
+    //            { src: $localPath + 'Images/bg/10.jpg', photographer: 'Chavdar Selinski - "Old bridge"' },
+    //            { src: $localPath + 'Images/bg/11.jpg', photographer: 'Chavdar Selinski - "Agushev konak" - Mogilitsa village' },
+    //            { src: $localPath + 'Images/bg/12.jpg', photographer: 'Mihail Hubchev - Church "St. Visarion Smolyanski" - Smolyan' },
+    //            { src: $localPath + 'Images/bg/13.jpg', photographer: 'Mihail Hubchev - "Winter"' }
+    //        ],
+    //        walk: function (index, slideSettings) {
+    //            //console.log("Slide index " + index + " image " + slideSettings.src + '' + slideSettings.photographer);
+    //            $('#ppLabel').html('<i class="fa ' + $camera + '"></i> ' + slideSettings.photographer);
+    //
+    //        }
+    //    });
+    //});
 
 </script>

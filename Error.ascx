@@ -101,6 +101,7 @@
     <!--PAGE CONTENT-->
     <section class="container">
         <main role="main" class="error">
+
             <!--HEADER PANE-->
             <div class="dnnpane">
                 <div id="HeaderPane" class="col-sm-12 headerPane" runat="server"></div>

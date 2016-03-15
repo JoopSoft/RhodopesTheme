@@ -1,4 +1,4 @@
-<%@ Control language="vb" AutoEventWireup="false" Explicit="True" Inherits="DotNetNuke.UI.Skins.Skin" %>
+<%@ Control Language="C#" AutoEventWireup="false" Explicit="True" Inherits="DotNetNuke.UI.Skins.Skin" %>
 <%@ Register TagPrefix="dnn" TagName="STYLES" Src="~/Admin/Skins/Styles.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="CURRENTDATE" Src="~/Admin/Skins/CurrentDate.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="LANGUAGE" Src="~/Admin/Skins/Language.ascx" %>
@@ -12,112 +12,217 @@
 <%@ Register TagPrefix="dnn" TagName="COPYRIGHT" Src="~/Admin/Skins/Copyright.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="LINKTOMOBILE" Src="~/Admin/Skins/LinkToMobileSite.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="META" Src="~/Admin/Skins/Meta.ascx" %>
-<%@ Register TagPrefix="dnn" TagName="MENU" src="~/DesktopModules/DDRMenu/Menu.ascx" %>
+<%@ Register TagPrefix="dnn" TagName="MENU" Src="~/DesktopModules/DDRMenu/Menu.ascx" %>
 <%@ Register TagPrefix="dnn" Namespace="DotNetNuke.Web.Client.ClientResourceManagement" Assembly="DotNetNuke.Web.Client" %>
-<%@ Register TagPrefix="dnn" TagName="jQuery" src="~/Admin/Skins/jQuery.ascx" %>
+<%@ Register TagPrefix="dnn" TagName="jQuery" Src="~/Admin/Skins/jQuery.ascx" %>
+
 
 <dnn:META ID="META1" runat="server" Name="viewport" Content="width=device-width,initial-scale=1" />
 
 <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 
 <div id="siteWrapper">
-
-    <!-- UserControlPanel  -->
-    <div id="topHeader">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div id="search-top" class="pull-right small-screens hidden-sm hidden-md hidden-lg">
-                        <dnn:SEARCH ID="dnnSearch2" runat="server" ShowSite="false" ShowWeb="false" EnableTheming="true" Submit="Search" CssClass="SearchButton" />
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="language">
-                        <dnn:LANGUAGE runat="server" id="LANGUAGE1"  showMenu="False" showLinks="True" />
-                    </div>
-                    <div class="search hidden-xs">
-                        <dnn:SEARCH ID="dnnSearch" runat="server" ShowSite="false" ShowWeb="false" EnableTheming="true" Submit="Search" CssClass="SearchButton" />
-                    </div>
-                    <%-- search action for Search function on small devices --%>
-                    <a href="#" id="search-action">
-                        <img src="<% =SkinPath %>images/search-icon.png" alt="Zoeken">
-                    </a>
-                    <div id="login" class="pull-right">
+    <!--TOP HEADER-->
+    <div id="topHeader" class="container">
+        <div class="col-xs-12 mobile-header">
+            <!--USER CONTROL PANEL-->
+            <div class="dropdown" id="login">
+                <a id="loginControl" data-target="#" href="http://example.com" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-user fa-lg"></i>
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="loginControl">
+                    <li>
                         <dnn:LOGIN ID="dnnLogin" CssClass="LoginLink" runat="server" LegacyMode="false" />
-                        <dnn:USER ID="dnnUser" runat="server" LegacyMode="false" /> 
-                    </div>
-                </div>
+                    </li>
+                    <li>
+                        <dnn:USER ID="dnnUser" runat="server" LegacyMode="false" />
+                    </li>
+                </ul>
+            </div>
+
+            <!--LANGUAGE-->
+            <div id="language" class="language">
+                <dnn:LANGUAGE runat="server" ID="dnnLanguageBar" ShowMenu="False" ShowLinks="True" />
             </div>
         </div>
     </div>
 
-    <!--Header -->
-    <header role="banner">
-        <div id="mainHeader-inner" class="container">
+    <!--HEADER-->
+    <header role="banner" class="container">
+        <!--LOGO -->
+        <div id="logoWrapper">
+            <span class="brand">
+                <dnn:LOGO runat="server" ID="dnnLOGO" />
+            </span>
+        </div>    
+            
+        <!--MENU -->
+        <div id="menuWrapper">
+            <div class="clearfix"></div>
             <div class="navbar navbar-default" role="navigation">
-                <div id="navbar-top-wrapper">
-                    <div id="logo">
-                        <span class="brand">
-                            <dnn:LOGO runat="server" ID="dnnLOGO" />
-                        </span>
+                <!--BRAND AND TOGGLE GET GROUPED FOR BETTER MOBILE DISPLAY-->
+                <div class="navbar-header">
+                    <a href="#" role="button" class="navbar-toggle menu-btn" data-toggle="collapse" data-target="#navbar">
+                        <i class="fa fa-navicon fa-lg"></i>
+                    </a>
+                    <a href="#" role="button" class="navbar-toggle search-btn" data-toggle="collapse" data-target="#mobileSearch">
+                        <i class="fa fa-search fa-lg"></i>
+                    </a>
+                </div>
+
+                <!--MAIN MENU-->
+                <div id="navbar" class="collapse navbar-collapse ">
+                    <div id="dnnMenu">
+                        <dnn:MENU ID="MENU" MenuStyle="Menus/MainMenu" runat="server" NodeSelector="*"></dnn:MENU>
+                        <ul class="nav navbar-nav topLevel navbar-right hidden-xs">
+                            <li>
+                                <a href="#" class="search-btn">
+                                    <i class="fa fa-search"></i>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <div id="navbar" class="collapse navbar-collapse pull-right"> 
-                    <dnn:MENU ID="MENU" MenuStyle="Menus/MainMenu" runat="server" NodeSelector="*"></dnn:MENU>
+
+                <!--SEARCH-->
+                <div id="mobileSearch" class="col-xs-12 collapse navbar-collapse mobile-search">
+                    <div id="search-top" class="small-screens">
+                        <dnn:SEARCH ID="dnnSearch" runat="server" ShowSite="false" ShowWeb="false" EnableTheming="true" Submit="Search" CssClass="SearchButton" />
+                    </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Page Content -->
-    <div class="container">
-        <main class="no-bg" role="main">
-            <div id="breadcrumb" class="col-md-12">
-                <dnn:BREADCRUMB ID="dnnBreadcrumb" runat="server" CssClass="breadcrumbLink" RootLevel="0" Separator="&lt;img src=&quot;/Portals/_default/Skins/Xcillion/Images/breadcrumb-arrow.png&quot;&gt;" HideWithNoBreadCrumb="true" />
-            </div>
-            <div id="mainContent-inner">                     
-                <div class="row dnnpane">
-                    <div id="ContentPane" class="col-md-12 contentPane" runat="server"></div>
-                </div>
-            </div><!-- /.mainContent-inner -->
-        </main><!-- /.mainContent -->
-    </div><!-- /.container -->
+    <!--PAGE CONTENT-->
+    <section class="container">
+        <main role="main" class="admin">
 
-    <!-- Footer -->
-    <footer role="contentinfo">
-        <%-- No footer panes for the Admin skin --%>
-        <div class="footer-below">
-            <div class="container">
-                <div class="row dnnpane">
-                    <div class="col-md-12">
-                        <div class="copyright">
-                            <dnn:COPYRIGHT ID="dnnCopyright" runat="server" CssClass="" />
-                        </div>
-                        <div class="terms-priv">
-                            <dnn:LINKTOMOBILE ID="dnnLinkToMobile" runat="server" />
-					        <dnn:TERMS ID="dnnTerms" runat="server" /> |
-					        <dnn:PRIVACY ID="dnnPrivacy" runat="server" />
-                        </div>
+            <!--HEADER PANE-->
+            <div class="dnnpane">
+                <div id="HeaderPane" class="col-sm-12 headerPane" runat="server"></div>
+            </div>
+
+            <%--<!--BREADCRUMB-->
+            <div id="breadcrumb" class="breadcrumb">--%>
+                <%--<dnn:BREADCRUMB ID="BREADCRUMB1" runat="server" CssClass="breadcrumbLink" RootLevel="-1" Separator=" &lt;span class=&quot;fa fa-angle-right&quot; /&gt;" HideWithNoBreadCrumb="true" />--%>
+                <%--<dnn:BREADCRUMB ID="dnnBreadcrumb" runat="server" CssClass="breadcrumbLink" RootLevel="-1" Separator="&nbsp;&nbsp;\&nbsp;&nbsp;" HideWithNoBreadCrumb="false" />--%>
+            <%--</div>--%>
+
+            <!--PANES-->
+            <div class="dnnpane">
+                <div id="ContentPane" class="col-sm-12 contentPane" runat="server"></div>
+            </div>
+ 
+        </main>
+    </section>
+
+    <!--FOOTER-->
+    <footer role="contentinfo" class="container">
+        <div class="footer-above col-sm-12">
+            <div class="dnnpane">
+                <div id="footer_25_1" class="footer-col col-md-3 col-sm-6" runat="server"></div>
+                <div id="footer_25_2" class="footer-col col-md-3 col-sm-6" runat="server"></div>
+                <div class="clearfix visible-sm"></div>
+                <div id="footer_25_3" class="footer-col col-md-3 col-sm-6" runat="server"></div>
+                <div id="footer_25_4" class="footer-col col-md-3 col-sm-6" runat="server"></div>
+            </div>
+        </div>
+        <div class="footer-below col-sm-12">
+            <div class="dnnpane">
+                <div class="col-sm-12 col-md-9 col-sm-offset-1">
+                    <div class="terms-priv">
+                        <dnn:LINKTOMOBILE ID="dnnLinkToMobile" runat="server" />
+                        <dnn:TERMS ID="dnnTerms" runat="server" />
+                        |
+					        <dnn:PRIVACY ID="dnnPrivacy" runat="server" text="Privacy policy" />
+                        |
+                            <asp:LinkButton ID="Contacts" runat="server" Text="Contacts" />
+                        |
+                            <asp:LinkButton ID="siteMap" runat="server" Text="SiteMap" />
+                    </div>
+                    <div class="copyright">
+                        <dnn:COPYRIGHT ID="dnnCopyright" runat="server" CssClass="" />
                     </div>
                 </div>
             </div>
         </div>
     </footer>
-    
-</div><!-- /.SiteWrapper -->
+
+    <!--BG CONTROLS-->
+    <div class="container ppControlHolder">
+        <button id="ppControl" type="button"></button>
+        <label id="ppLabel"></label>
+    </div>
+
+</div>
+<!-- /.SiteWrapper -->
 
 <%-- CSS & JS includes --%>
 <!--#include file="Common/IncludeFiles.ascx"-->
+
+<script type="text/javascript">
+    var $skinPath = '<% =SkinPath %>',
+        $localPath = '/Portals/0/',
+        <%--$moduleId = <% =SkinPath %>,--%>
+
+        $play = 'fa-play-circle-o',
+        $pause = 'fa-pause-circle-o',
+        $camera = 'fa-camera';
+
+    //console.log($moduleId);
+
+    //$('#playControl').on('click', function () {
+    //    $('body').vegas('play');
+    //});
+    //$('#pauseControl').on('click', function () {
+    //    $('body').vegas('pause');
+    //});
+
+    $('#ppControl').html('<i class="fa ' + $pause + ' fa-5x"></i>');
+
+    $('#ppControl').bind('click', function () {
+        $('body').vegas('toggle');
+
+        $(this).find('i').toggleClass($play + ' ' + $pause);
+
+    });
+
+    //$(function () {
+    //    $('body').vegas({
+    //        delay: 30000,
+    //        timer: true,
+    //        shuffle: true,
+    //        transition: 'fade',
+    //        transitionDuration: 3000,
+    //        animation: 'random',
+    //        autoplay: false,
+    //        overlay: $skinPath + '/Vegas/overlays/01.png',
+    //        slides: [
+    //            { src: $localPath + 'Images/bg/1.jpg',  photographer: 'Mihail Hubchev - Winter in Shiroka laka village' },
+    //            { src: $localPath + 'Images/bg/2.jpg',  photographer: 'Teodor Varbanov' },
+    //            { src: $localPath + 'Images/bg/3.jpg',  photographer: 'Vanya Padalova' },
+    //            { src: $localPath + 'Images/bg/4.jpg',  photographer: 'Tencho Petkov - Monyak pano' },
+    //            { src: $localPath + 'Images/bg/5.jpg',  photographer: 'Alexander Karadzhov' },
+    //            { src: $localPath + 'Images/bg/6.jpg',  photographer: 'Elena Mandjukova' },
+    //            { src: $localPath + 'Images/bg/7.jpg',  photographer: 'Borislava Ivanova - Lake' },
+    //            { src: $localPath + 'Images/bg/8.jpg',  photographer: 'Gergana Todorova - Lake' },
+    //            { src: $localPath + 'Images/bg/9.jpg',  photographer: 'Ivailo Madzharov - "Autumn"' },
+    //            { src: $localPath + 'Images/bg/10.jpg', photographer: 'Chavdar Selinski - "Old bridge"' },
+    //            { src: $localPath + 'Images/bg/11.jpg', photographer: 'Chavdar Selinski - "Agushev konak" - Mogilitsa village' },
+    //            { src: $localPath + 'Images/bg/12.jpg', photographer: 'Mihail Hubchev - Church "St. Visarion Smolyanski" - Smolyan' },
+    //            { src: $localPath + 'Images/bg/13.jpg', photographer: 'Mihail Hubchev - "Winter"' }
+    //        ],
+    //        walk: function (index, slideSettings) {
+    //            //console.log("Slide index " + index + " image " + slideSettings.src + '' + slideSettings.photographer);
+    //            $('#ppLabel').html('<i class="fa ' + $camera + '"></i> ' + slideSettings.photographer);
+    //
+    //        }
+    //    });
+    //});
+
+</script>

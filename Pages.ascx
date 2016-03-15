@@ -101,6 +101,7 @@
     <!--PAGE CONTENT-->
     <section class="container">
         <main role="main" class="page">
+
             <!--HEADER PANE-->
             <div class="dnnpane">
                 <div id="HeaderPane" class="col-sm-12 headerPane" runat="server"></div>
@@ -109,7 +110,7 @@
             <!--BREADCRUMB-->
             <div id="breadcrumb" class="breadcrumb">
                 <%--<dnn:BREADCRUMB ID="BREADCRUMB1" runat="server" CssClass="breadcrumbLink" RootLevel="-1" Separator=" &lt;span class=&quot;fa fa-angle-right&quot; /&gt;" HideWithNoBreadCrumb="true" />--%>
-                <dnn:BREADCRUMB ID="dnnBreadcrumb" runat="server" CssClass="breadcrumbLink" RootLevel="-1" Separator="  \  " HideWithNoBreadCrumb="false" />
+                <dnn:BREADCRUMB ID="dnnBreadcrumb" runat="server" CssClass="breadcrumbLink" RootLevel="-1" Separator="&nbsp;&nbsp;\&nbsp;&nbsp;" HideWithNoBreadCrumb="false" />
             </div>
 
             <!--PANES-->

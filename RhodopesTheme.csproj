@@ -121,6 +121,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Containers\Title_h2.ascx" />
+    <Content Include="Containers\Title_h2.jpg" />
+    <Content Include="Containers\Title_h3.ascx" />
+    <Content Include="Containers\Title_h3.jpg" />
+    <Content Include="Containers\Title_h4.ascx" />
+    <Content Include="Containers\Title_h4.jpg" />
     <Content Include="PopupSkin.jpg" />
     <Content Include="PopupSkin.doctype.xml" />
     <Content Include="scss\style.css">
