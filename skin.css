@@ -30,10 +30,14 @@ a, a img, abbr, acronym, address, applet, article, aside, audio, b, big, blockqu
 }
 
 [class*=RadAjaxPanel] *, [class*=Digital] * {
-    font-size: 12px;
+    /*font-size: 12px;*/
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
     box-sizing: content-box;
+}
+
+div.popup-no-spacing {
+    padding: 0;
 }
 
 html, li, p {

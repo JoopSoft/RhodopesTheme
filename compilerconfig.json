@@ -1,10 +1,14 @@
 ﻿[
   {
-    "outputFile": "scss/_partial/variables.css",
-    "inputFile": "scss/_partial/variables.scss"
+    "outputFile": "variables.css",
+    "inputFile": "variables.scss"
   },
   {
-    "outputFile": "scss/style.css",
-    "inputFile": "scss/style.scss"
+    "outputFile": "skin.css",
+    "inputFile": "skin.scss"
+  },
+  {
+    "outputFile": "style.css",
+    "inputFile": "style.scss"
   }
 ]

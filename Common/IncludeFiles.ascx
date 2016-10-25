@@ -7,7 +7,7 @@
 <dnn:DnnCssInclude ID="SmartMenuBootstrapCSS" runat="server" FilePath="css/jquery.smartmenus.bootstrap.css" PathNameAlias="SkinPath" Priority="13" />
 <dnn:DnnCssInclude ID="MainMenuCSS" runat="server" FilePath="Menus/MainMenu/MainMenu.css" PathNameAlias="SkinPath" Priority="14" />
 <%--<dnn:DnnCssInclude ID="FontAwesomeIcons" runat="server" FilePath="FontAwesome/css/font-awesome.min.css" PathNameAlias="SkinPath" />--%>
-<dnn:DnnCssInclude ID="SkinCSS" runat="server" FilePath="scss/style.min.css" PathNameAlias="SkinPath" />
+<dnn:DnnCssInclude ID="SkinCSS" runat="server" FilePath="style.min.css" PathNameAlias="SkinPath" />
 
 <%-- JS files --%>
 <dnn:DnnJsInclude ID="VegasJS" runat="server" FilePath="Vegas/vegas.min.js" PathNameAlias="SkinPath"/>

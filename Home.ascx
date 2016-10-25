@@ -24,7 +24,7 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<div id="siteWrapper">
+<div id="siteWrapper" class="rhodopes-theme">
     <!--TOP HEADER-->
     <div id="topHeader" class="container">
         <div class="col-xs-12 mobile-header">
@@ -165,75 +165,38 @@
             </div>
         </div>
     </footer>
-
-    <!--BG CONTROLS-->
-    <div class="container ppControlHolder">
-        <button id="ppControl" type="button"></button>
-        <label id="ppLabel"></label>
-    </div>
 </div>
 
 <%-- CSS & JS includes --%>
 <!--#include file="Common/IncludeFiles.ascx"-->
-
 <script type="text/javascript">
-    var $skinPath = '<% =SkinPath %>',
-        $localPath = '/Portals/0/',
-        <%--$moduleId = <% =SkinPath %>,--%>
 
-        $play = 'fa-play-circle-o',
-        $pause = 'fa-pause-circle-o',
-        $camera = 'fa-camera';
+    // $(window).load(function () {
 
-    //console.log($moduleId);
+    $('.rhodopes-theme #login ul li:empty').html('Empty');
+    
 
-    //$('#playControl').on('click', function () {
-    //    $('body').vegas('play');
-    //});
-    //$('#pauseControl').on('click', function () {
-    //    $('body').vegas('pause');
-    //});
-
-    $('#ppControl').html('<i class="fa ' + $pause + ' fa-5x"></i>');
-
-    $('#ppControl').bind('click', function () {
-        $('body').vegas('toggle');
-
-        $(this).find('i').toggleClass($play + ' ' + $pause);
-
-    });
-
-    //$(function () {
-    //    $('body').vegas({
-    //        delay: 30000,
-    //        timer: true,
-    //        shuffle: true,
-    //        transition: 'fade',
-    //        transitionDuration: 3000,
-    //        animation: 'random',
-    //        autoplay: false,
-    //        overlay: $skinPath + '/Vegas/overlays/01.png',
-    //        slides: [
-    //            { src: $localPath + 'Images/bg/1.jpg',  photographer: 'Mihail Hubchev - Winter in Shiroka laka village' },
-    //            { src: $localPath + 'Images/bg/2.jpg',  photographer: 'Teodor Varbanov' },
-    //            { src: $localPath + 'Images/bg/3.jpg',  photographer: 'Vanya Padalova' },
-    //            { src: $localPath + 'Images/bg/4.jpg',  photographer: 'Tencho Petkov - Monyak pano' },
-    //            { src: $localPath + 'Images/bg/5.jpg',  photographer: 'Alexander Karadzhov' },
-    //            { src: $localPath + 'Images/bg/6.jpg',  photographer: 'Elena Mandjukova' },
-    //            { src: $localPath + 'Images/bg/7.jpg',  photographer: 'Borislava Ivanova - Lake' },
-    //            { src: $localPath + 'Images/bg/8.jpg',  photographer: 'Gergana Todorova - Lake' },
-    //            { src: $localPath + 'Images/bg/9.jpg',  photographer: 'Ivailo Madzharov - "Autumn"' },
-    //            { src: $localPath + 'Images/bg/10.jpg', photographer: 'Chavdar Selinski - "Old bridge"' },
-    //            { src: $localPath + 'Images/bg/11.jpg', photographer: 'Chavdar Selinski - "Agushev konak" - Mogilitsa village' },
-    //            { src: $localPath + 'Images/bg/12.jpg', photographer: 'Mihail Hubchev - Church "St. Visarion Smolyanski" - Smolyan' },
-    //            { src: $localPath + 'Images/bg/13.jpg', photographer: 'Mihail Hubchev - "Winter"' }
-    //        ],
-    //        walk: function (index, slideSettings) {
-    //            //console.log("Slide index " + index + " image " + slideSettings.src + '' + slideSettings.photographer);
-    //            $('#ppLabel').html('<i class="fa ' + $camera + '"></i> ' + slideSettings.photographer);
-    //
-    //        }
-    //    });
+        //$('.rhodopes-theme #login').each(function () {
+        //    var $li = $(this).find('ul').children();
+        //
+        //
+        //
+        //    $li.each(function () {
+        //        //$("td:empty")
+        //        $(this).is(':empty').text("Was empty!");
+        //        //$(this).is(':empty').remove();
+        //
+        //        console.log($li.length);
+        //        //if ($li.length > 0){
+        //        if ($(this).empty()) $('.rhodopes-theme #login').hide();
+        //        else $('.rhodopes-theme #login').show();
+        //        //}
+        //
+        //    });
+        //
+        //
+        //});
     //});
 
 </script>
+
