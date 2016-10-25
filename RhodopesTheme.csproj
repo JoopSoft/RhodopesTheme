@@ -351,7 +351,6 @@
     <Content Include="FontAwesome\scss\_variables.scss" />
     <Content Include="Resource-skin.zip.manifest" />
     <Content Include="Vegas\vegas.min.js.map" />
-    <Content Include="Resources.zip" />
     <Content Include="style.scss" />
     <Content Include="variables.scss" />
     <None Include="compilerconfig.json" />
